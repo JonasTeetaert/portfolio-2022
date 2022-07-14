@@ -1,0 +1,16 @@
+[
+  {
+    "ts": "2022-07-14T08:05:12.797Z",
+    "level": "error",
+    "error": {
+      "originalError": {
+      },
+      "stacktrace": [
+        "Error: Error: Please make sure the destination space have the same default locale as the source Default locale for source space : en-US Default locale for destination space: en-BE ",
+        "/Users/jonas/Documents/DEVELOPMENT/gatsby/portfolio-2022/node_modules/contentful-batch-libs/dist/listr.js:24:29",
+        "runNextTicks (node:internal/process/task_queues:61:5)",
+        "processImmediate (node:internal/timers:437:9)"
+      ]
+    }
+  }
+]
