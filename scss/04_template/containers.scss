@@ -20,7 +20,10 @@
 }
 
 .t-section {
-  padding: $spacer*1 0;
+  padding: $spacer 0;
+  &:nth-child(even) {
+    text-align: right;
+  }
 }
 
 .container {
