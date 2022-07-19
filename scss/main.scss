@@ -1,0 +1,66 @@
+// Copyright (c) 2022s Jonas Teetaert
+
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
+// Bootstrap
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+@import './00_base/variables'; // overwrites bootsrap variables
+@import '../node_modules/bootstrap/scss/mixins';
+
+@import '../node_modules/bootstrap/scss/root';
+@import '../node_modules/bootstrap/scss/reboot';
+@import '../node_modules/bootstrap/scss/type';
+@import '../node_modules/bootstrap/scss/grid';
+@import '../node_modules/bootstrap/scss/utilities';
+
+// @import '/node_modules/swiper/css/swiper.css';
+
+// * Patern Lab css structure
+// BASE
+@import './00_base/mixins.scss';
+@import './00_base/global';
+
+// ICON FONT
+// @import '../assets/icomoon/style.css';
+
+// ATOMS eg. a-button, a-icon
+@import './01_atom/cta.scss';
+@import './01_atom/icons.scss';
+@import './01_atom/image.scss';
+@import './01_atom/list.scss';
+
+// MOLECULE eg. m-teaser
+// @import './02_molecule/*';
+
+// ORGANISM eg. o-teaser-list
+// @import './03_organism/*';
+
+// TEMPLATES eg. t-section
+// re-used on many web pages/
+@import './04_template/containers.scss';
+@import './04_template/mansonry.scss';
+@import './04_template/page.scss';
+
+// PAGES
+// pecific implementation of a template
+// @import './05_page/*';
+
+// Overites everything
+@import './00_base/helpers';

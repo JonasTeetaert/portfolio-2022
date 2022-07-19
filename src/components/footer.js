@@ -1,16 +1,11 @@
-import React from 'react'
-
-import Container from './container'
-import * as styles from './footer.module.css'
+import * as React from 'react'
 
 const Footer = () => (
-  <Container as="footer">
-    <div className={styles.container}>
-      Built with <a href="https://contentful.com/">Contentful</a> and{' '}
-      <a href="https://gatsbyjs.com">Gatsby</a> &middot;{' '}
-      <a href="https://github.com/contentful/starter-gatsby-blog">Source</a>
+  <footer className='m-footer'>
+    <div className='m-footer__copy'>
+      &copy; 2022 - All Rights Reserved | Made with <a href='https://www.gatsbyjs.com/' target='_blank' rel="noopener noreferrer">Gastby</a> and <a href='https://www.contentful.com/' target='_blank' rel="noopener noreferrer">Contentful</a>
     </div>
-  </Container>
+  </footer>
 )
 
 export default Footer

@@ -1,0 +1,17 @@
+.a-image {
+  display: block;
+  // margin-left: -15%;
+  margin-bottom: $spacer;
+
+  img {
+    width: 100%;
+  }
+
+  figcaption {
+    display: block;
+    text-align: right;
+    font-style: italic;
+    margin-top: 5px;
+    font-size: $font-size-small;
+  }
+}

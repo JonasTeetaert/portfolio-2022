@@ -1,0 +1,96 @@
+.t-page__title {
+  position: relative;
+
+  span {
+    position: relative;
+    width: 17px;
+    display: inline-block;
+    margin-right: 5px;
+
+    @include media-breakpoint-up(lg) {
+      width: 24px;
+    }
+  }
+}
+
+.t-page__subtitle {
+  font-size: 1.25rem;
+}
+
+.t-page__title+t.t-page__subtitle {
+  margin-top: $spacer;
+}
+
+.t-page--content-header {
+  display: flex;
+
+  .t-page__image {
+    margin-right: $spacer;
+  }
+}
+
+.t-page__rte {
+  margin-bottom: $spacer;
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      padding-left: 15px;
+
+      &:before {
+        position: absolute;
+        left: 0;
+        top: 8px;
+        content: '';
+        width: 10px;
+        height: 1px;
+        background: $primary;
+      }
+    }
+  }
+}
+
+.t-page__back {
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  top: -12px;
+  left: 0;
+  position: absolute;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.t-page__pagination {
+  text-align: right;
+
+  >a {
+    display: inline-block;
+    margin-left: calc($spacer/2);
+    margin-top: $spacer;
+  }
+}
+
+@include media-breakpoint-up(md) {
+
+  .t-page__title {
+    margin-bottom: 0;
+  }
+
+  .t-page__rte {
+    margin-left: 20%;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .t-page__back {
+    top: 24px;
+    left: -38px;
+    font-size: 25px;
+  }
+}

@@ -1,0 +1,44 @@
+// Colors
+$light-gray: #fbf4ee;
+$skin: #ffa290;
+$yellow: #ecc89d;
+$turquoise: #4894a7;
+$purple: #6e7aa5;
+
+$body-color: #fff;
+
+// spacing
+$spacer: 1.5rem;
+
+// Paragraphs
+$paragraph-margin-bottom: calc($spacer / 1.6);
+
+// Typography
+$font-family-durer: 'durerregular', 'Garamond', 'Georgia', serif;
+$font-family-cormorant-garamond: 'Cormorant Garamond', 'Garamond', 'Georgia', serif;
+$font-family-base: $font-family-cormorant-garamond;
+$font-size-base: 1rem; // 14px
+$font-size-small: 0.875rem; // 8px
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.3;
+
+$h1-font-size: 3.4375rem; // 55px
+$h2-font-size: 1.5rem;
+$h3-font-size: 1rem; // 16px
+$h4-font-size: 1rem; // 14px
+
+$headings-font-family: $font-family-base;
+$headings-font-weight: $font-weight-normal;
+$headings-line-height: 1.366;
+$headings-margin-bottom: $spacer*1.5;
+
+// Grid
+$grid-gutter-width: $spacer;
+
+// Forms
+$form-grid-gutter-width: $spacer;
