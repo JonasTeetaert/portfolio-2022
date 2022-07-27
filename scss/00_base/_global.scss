@@ -17,8 +17,8 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  background: rgb(72, 148, 167);
-  background: linear-gradient(122deg, rgba(72, 148, 167, 1) 0%, rgba(236, 200, 157, 1) 100%);
+//   background: rgb(72, 148, 167);
+//   background: linear-gradient(122deg, rgba(72, 148, 167, 1) 0%, rgba(236, 200, 157, 1) 100%);
 }
 
 a {
@@ -55,10 +55,6 @@ h1,
 h2,
 h3 {
   font-family: $font-family-durer;
-}
-
-h2 {
-  margin-bottom: calc($spacer/2);
 }
 
 h3 {

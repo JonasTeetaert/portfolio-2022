@@ -60,9 +60,9 @@
 @import './04_template/mansonry.scss';
 @import './04_template/page.scss';
 
-// PAGES
+// PAGES eg. p-home
 // pecific implementation of a template
-// @import './05_page/*';
+@import './05_page/home.scss';
 
 // Overites everything
 @import './00_base/helpers';

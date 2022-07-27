@@ -1,43 +1,19 @@
 .t-page {
-  padding-top: 200px;
-}
-
-.t-page__list-primary {
-  list-style: none;
-  font-size: 5rem;
-  font-family: $font-family-durer;
-  text-align: end;
-  a {
-    &:hover,
-    &:active,
-    &:focus {
-      text-decoration: none;
-    }
+  padding-top: 50px;
+  @include media-breakpoint-up(md) {
+    padding-top: 200px;
   }
 }
 
-.t-page__description {
-  font-size: 2rem;
-  text-align: left;
-}
-
-.t-page__list-secondary {
-  list-style: none;
-  padding: 0;
-  font-size: 2rem;
-  li {
-    display: inline-block;
-    margin-right: calc($spacer/2);
-    &:before {
-      content: '-';
-      display: inline-block;
-      margin-right: calc($spacer/2);
-    }
-
-    &:first-of-type {
-      &:before{
-        display: none;
-      }
-    }
-  }
+.t-page-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -10;
+  background-image: url('../static/images/background-gradient-1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }

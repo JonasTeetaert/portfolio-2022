@@ -10,6 +10,7 @@ const Layout = ({ nav, children }) => {
     <>
       <Seo />
       <Navigation />
+      <div className="t-page-background"></div>
       <main className="t-page">
         <div className="container">
           <div className="row">
