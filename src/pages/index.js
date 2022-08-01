@@ -8,8 +8,10 @@ const IndexPage = ({ data }) => {
   return (
     <Layout nav={<SideNav data={data} />}>
       <ul id="cases" className="p-home__list-primary">
-        {data.allContentfulCase.nodes.map((node) => (
-          <Link to={`/cases/${node.slug}`}>{node.title}</Link>
+        {data.allContentfulCase.nodes.map((node, i) => (
+          <li key={i}>
+            <Link to={`/cases/${node.slug}`}>{node.title}</Link>
+          </li>
         ))}
       </ul>
       <div className="t-section" id="about">
@@ -18,23 +20,23 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
       <div className="t-section">
-        <h2>Expertise</h2>
-        <ul className="p-home__list-secondary">
-          {data.contentfulProfile.expertise.map((node) => (
-            <li>{node}</li>
+        <h2 className="p-home__h2">Expertise</h2>
+        <ul className="a-list p-home__list-secondary">
+          {data.contentfulProfile.expertise.map((node, i) => (
+            <li key={i}>{node}</li>
           ))}
         </ul>
       </div>
       <div className="t-section">
-        <h2>Libraries & Programs </h2>
-        <ul className="p-home__list-secondary">
-          {data.contentfulProfile.libraries.map((node) => (
-            <li>{node}</li>
+        <h2 className="p-home__h2">Libraries & Programs </h2>
+        <ul className="a-list p-home__list-secondary">
+          {data.contentfulProfile.libraries.map((node, i) => (
+            <li key={i}>{node}</li>
           ))}
         </ul>
       </div>
       <div className="t-section" id="contact">
-        <h2>Question? Project?</h2>
+        <h2 className="p-home__h2">Question? Project?</h2>
         <div className="p-home__cta">
           <a
             className="a-cta a-cta--large"
@@ -62,7 +64,7 @@ export const query = graphql`
       libraries
       linkedin
     }
-    allContentfulCase {
+    allContentfulCase(sort: { fields: createdAt, order: DESC }) {
       nodes {
         title
         slug

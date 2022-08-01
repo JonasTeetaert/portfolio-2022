@@ -1,9 +1,23 @@
-.list {
+.a-list {
 	list-style: none;
-	padding: 0;
-}
+  padding: 0;
+  li {
+    display: inline-block;
+    margin-right: calc($spacer/2);
+    &:before {
+      content: '-';
+      display: inline-block;
+      margin-right: calc($spacer/2);
+    }
 
-.list--inline li {
-	display: inline-block;
-	vertical-align: middle;
+    &:first-of-type {
+      &:before{
+        display: none;
+      }
+    }
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+  }
 }
