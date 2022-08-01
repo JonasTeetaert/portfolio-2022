@@ -62,7 +62,9 @@
   fill: #fff;
   margin-left: calc($spacer/2);
 } 
-
+.t-page__pagination {
+  margin-top: $spacer;
+}
 @include media-breakpoint-up(md) {
   .t-page__rich-text {
     ul,
@@ -71,6 +73,7 @@
     h2,
     h3,
     h4,
+    hr,
     blockquote,
     p {
       margin-left: 33.3333%;
