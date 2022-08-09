@@ -63,6 +63,7 @@
 // PAGES eg. p-home
 // pecific implementation of a template
 @import './05_page/home.scss';
+@import './05_page/masking.scss';
 
 // Overites everything
 @import './00_base/helpers';

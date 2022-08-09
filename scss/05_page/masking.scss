@@ -1,0 +1,45 @@
+.cursor {
+  display: none;
+}
+
+@include media-breakpoint-up(lg) {
+  body {
+    cursor: none;
+  }
+
+  a {
+    &:hover {
+      cursor: none;
+    }
+  }
+  .cursor {
+    display: block;
+    position: fixed;
+    top: -5px;
+    left: -5px;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    > div {
+      border-radius: 100%;
+      width: 15px;
+      height: 15px;
+      background-color: #fff;
+      transition: all 250ms ease;
+    }
+  }
+  
+  .bg-clip {
+    clip-path: url(#clip-circle);
+  }
+  
+  #clip-circle path,
+  #clip-circle circle {
+    transform-origin: center;
+  }
+  
+  #clip-circle circle {
+    //  pulse 1s infinite alternate cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transform-origin: center;
+    transition: all 500ms ease;
+  }
+}

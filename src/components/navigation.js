@@ -10,9 +10,9 @@ const Navigation = () => (
             Jonas Teetaert
           </Link>
           <ul className="m-nav__list">
-            <li>
+            {/* <li>
               <Link to="/blog/">Blog</Link>
-            </li>
+            </li> */}
             <li>
               <button className="a-cta">Fun Mode</button>
             </li>

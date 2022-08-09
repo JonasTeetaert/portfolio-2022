@@ -1,16 +1,32 @@
-import * as React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import '../../scss/main.scss'
 import Seo from './seo'
 import Navigation from './navigation'
 import Footer from './footer'
+import Cursor from './cursor'
 
 const Layout = ({ nav, children }) => {
+  const [state, setState] = useState({
+    event: null,
+  })
+
+  const handleMovement = (e) => {
+    setState({ event: e })
+  }
+
+  // componentDidMount
+  useEffect(() => {
+    window.addEventListener('scroll', handleMovement)
+  }, [])
+
   return (
-    <>
+    <div role="presentation" onMouseMove={handleMovement}>
       <Seo />
       <Navigation />
-      <div className="t-page-background"></div>
+      <Cursor event={state.event} />
+      <div className="t-page-background  t-page-background--1"></div>
+      <div className="t-page-background t-page-background--2 bg-clip"></div>
       <main className="t-page">
         <div className="container">
           <div className="row">
@@ -26,7 +42,7 @@ const Layout = ({ nav, children }) => {
         </div>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 
