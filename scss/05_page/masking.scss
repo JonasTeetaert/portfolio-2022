@@ -7,6 +7,7 @@
     cursor: none;
   }
 
+  button,
   a {
     &:hover {
       cursor: none;
@@ -35,6 +36,7 @@
   #clip-circle path,
   #clip-circle circle {
     transform-origin: center;
+    pointer-events: none;
   }
   
   #clip-circle circle {

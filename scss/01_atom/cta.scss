@@ -7,10 +7,16 @@
 	border-top-right-radius: 50% 50%;
 	border-bottom-left-radius: 50% 50%;
 	border-bottom-right-radius: 50% 50%;
-	&:hover,
-	&:active,
-	&:focus{
+
+
+	&:hover {
 		text-decoration: none;
+		background-color: $skin !important;
+	}
+
+	&.active {
+		background-color: $body-color;
+		color: #000;
 	}
 }
 

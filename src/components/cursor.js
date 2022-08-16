@@ -9,9 +9,13 @@ const Cursor = ({ event }) => {
     scaleCursor: 0,
   })
 
+  // componentDidUpdate
   useEffect(() => {
     if (event != null) {
-      if (event.target.localName === 'a') {
+      if (
+        event.target.localName === 'a' ||
+        event.target.localName === 'button'
+      ) {
         setState({
           x: event.clientX,
           y: event.clientY,
