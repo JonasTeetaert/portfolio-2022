@@ -17,7 +17,8 @@
     font-size: 5rem;
   }
   @include media-breakpoint-down(md) {
-    padding-top: 95vh;
+    margin-top: 90vh;
+    padding-top: $spacer;
   }
 }
 

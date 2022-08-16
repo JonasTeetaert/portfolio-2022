@@ -21,7 +21,7 @@ const blendModes = [
 
 const SPEED = 5
 
-const Layout = ({ nav, children }) => {
+const Layout = ({ nav, fullpage, children }) => {
   const [state, setState] = useState({
     event: null,
     isFunMode: false,
@@ -83,7 +83,7 @@ const Layout = ({ nav, children }) => {
             : 'hard-light',
         }}
       ></div>
-      <main className="t-page">
+      <main className={fullpage ? 't-fullpage' : 't-page'}>
         <div className="container">
           <div className="row">
             {nav ? (
@@ -97,7 +97,7 @@ const Layout = ({ nav, children }) => {
           </div>
         </div>
       </main>
-      <Footer />
+      <Footer fullpage={fullpage} />
     </>
   )
 }

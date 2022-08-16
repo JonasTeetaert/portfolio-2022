@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-const Footer = () => (
-  <footer className="m-footer">
+const Footer = ({ fullpage }) => (
+  <footer className={`m-footer ${fullpage ? 'm-footer--fullpage' : ''}`}>
     <div className="container">
       <div className="row">
         <div className="col m-footer__wrapper">
