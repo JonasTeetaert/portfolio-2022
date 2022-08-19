@@ -19,7 +19,7 @@ const blendModes = [
   'saturation',
 ]
 
-const SPEED = 5
+// const SPEED = 5
 
 const Layout = ({ nav, fullpage, children }) => {
   const [state, setState] = useState({

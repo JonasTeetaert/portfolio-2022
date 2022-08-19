@@ -83,7 +83,7 @@ export const query = graphql`
       id
       heroImage {
         description
-        gatsbyImageData
+        gatsbyImageData(placeholder: BLURRED)
       }
     }
     allContentfulCase(sort: { fields: createdAt, order: DESC }) {
