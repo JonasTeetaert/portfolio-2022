@@ -1,13 +1,29 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
-import Layout from '../components/layout'
+import Seo from '../components/seo'
+import Footer from '../components/footer'
 
 const Maintenance = () => {
   return (
-    <Layout fullpage={true}>
-      <title>Maintenance</title>
-      <h1>Coming Soon</h1>
-    </Layout>
+    <>
+      <Seo />
+      <main>
+        <div className="t-fullpage">
+          <div className="row">
+            <div className="col">
+              <title>Maintenance</title>
+              <h1>Coming Soon</h1>
+              <a
+                className="a-cta a-cta--large"
+                href="mailto:info@jonasteetaert.be"
+              >
+                info@jonasteetaert.be
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+      <Footer fullpage={true} />
+    </>
   )
 }
 

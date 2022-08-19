@@ -70,7 +70,7 @@ const Layout = ({ nav, fullpage, children }) => {
   }
 
   return (
-    <>
+    <div className="masking">
       <Seo />
       <Navigation funModeHandler={toggleFunMode} isFunMode={state.isFunMode} />
       <Cursor event={state.event} isFunMode={state.isFunMode} />
@@ -98,7 +98,7 @@ const Layout = ({ nav, fullpage, children }) => {
         </div>
       </main>
       <Footer fullpage={fullpage} />
-    </>
+    </div>
   )
 }
 

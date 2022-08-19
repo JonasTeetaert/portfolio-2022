@@ -3,14 +3,16 @@
 }
 
 @include media-breakpoint-up(lg) {
-  body {
+
+  .masking {
     cursor: none;
   }
-
-  button,
-  a {
-    &:hover {
-      cursor: none;
+  .masking {
+    button,
+    a {
+      &:hover {
+        cursor: none;
+      }
     }
   }
   .cursor {
