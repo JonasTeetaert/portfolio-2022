@@ -13,7 +13,7 @@ const Maintenance = () => {
           <div className="row">
             <div className="col">
               <title>Maintenance</title>
-              <h1>Coming Soon</h1>
+              <h1>Coming Soon!</h1>
               <a
                 className="a-cta a-cta--large"
                 href="mailto:info@jonasteetaert.be"
