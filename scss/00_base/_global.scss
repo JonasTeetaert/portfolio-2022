@@ -25,11 +25,15 @@ a {
   text-decoration: none;
   display: inline-block;
   color: $body-color;
+  transition: color 150ms ease;
 
   &:focus,
   &:hover {
     text-decoration: underline;
-    color: $body-color;
+
+    @include media-breakpoint-up(lg) {
+      color: #000;
+    }
   }
 }
 
