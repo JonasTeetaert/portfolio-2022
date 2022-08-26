@@ -19,68 +19,63 @@ const blendModes = [
   'saturation',
 ]
 
-// const SPEED = 5
-
 const Layout = ({ nav, fullpage, children }) => {
-  const [state, setState] = useState({
-    event: null,
-    isFunMode: false,
-    counter: 0,
+  const [mouse, setMouse] = useState({
+    e: null,
+    x: null,
+    y: null,
+    // movementX: null,
+    // movementY: null,
+    // speed: null,
   })
+  const [funMode, setFunMode] = useState(false)
+  const [counter, setCounter] = useState(0)
 
+  // Mobile check
   const isDesktop = useMediaQuery({
     query: '(min-width: 992px)',
   })
 
   useEffect(() => {
     // trotthlify will execute the mouse event less for performance
-    const onMovement = throttlify((e) => {
+    const handle = throttlify((e) => {
       if (isDesktop) {
-        setState((prevState) => {
-          return { ...prevState, event: e }
+        setMouse({
+          e: e,
+          x: e.clientX,
+          y: e.clientY,
+          // movementX: Math.abs(e.movementY),
+          // movementY: Math.abs(e.movementY),
+          // speed: speed,
         })
-
-        if (state.isFunMode) {
-          if (state.counter >= blendModes.length - 1) {
-            setState((prevState) => {
-              return { ...prevState, counter: 0 }
-            })
+        if (funMode) {
+          if (counter >= blendModes.length - 1) {
+            setCounter(0)
           } else {
-            setState((prevState) => {
-              return { ...prevState, counter: prevState.counter + 1 }
-            })
+            setCounter(counter + 1)
           }
         }
       }
     })
-    document.addEventListener('mousemove', onMovement)
-
-    return () => {
-      document.removeEventListener('mousemove', onMovement)
-    }
-  }, [state, isDesktop])
+    document.addEventListener('mousemove', handle)
+    return () => document.removeEventListener('mousemove', handle)
+  }, [isDesktop, counter, funMode])
 
   // Toggle fun mode
   const toggleFunMode = () => {
-    let bool = state.isFunMode
-    bool ? (bool = false) : (bool = true)
-    setState((prevState) => {
-      return { ...prevState, isFunMode: bool }
-    })
+    setFunMode((bool) => !bool)
   }
 
   return (
     <>
       <Seo />
-      <Navigation funModeHandler={toggleFunMode} isFunMode={state.isFunMode} />
-      <Cursor event={state.event} isFunMode={state.isFunMode} />
+      <Navigation funModeHandler={toggleFunMode} isFunMode={funMode} />
+      <Cursor event={mouse.e} />
       <div className="t-page-background  t-page-background--1"></div>
       <div
         className="t-page-background t-page-background--2 bg-clip"
         style={{
-          mixBlendMode: state.isFunMode
-            ? blendModes[state.counter]
-            : 'hard-light',
+          mixBlendMode: funMode ? blendModes[counter] : 'hard-light',
         }}
       ></div>
       <main className={fullpage ? 't-fullpage' : 't-page'}>

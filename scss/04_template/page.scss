@@ -53,7 +53,7 @@
       z-index: -9;
       background-repeat: repeat;
       mix-blend-mode: hard-light;
-      animation: bgSlide linear 40s infinite;
+      animation: bgSlide linear 200s infinite;
     }
   }
 }
@@ -70,11 +70,13 @@
 
 .t-page__cta-next {
   font-size: 1.3rem;
+  transition: transform 250ms ease;
 
    &:hover,
    &:focus,
    &:active {
     text-decoration: none;
+    transform: scale(1.2);
    }
 
    @include media-breakpoint-up(md) {

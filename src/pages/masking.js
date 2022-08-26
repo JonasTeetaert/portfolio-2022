@@ -1,33 +1,28 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useMouse } from '../functions'
+
 import Cursor from '../components/cursor'
 
 const Masking = () => {
-  const [state, setState] = useState({
-    event: null,
-  })
-
-  const handleOnMouseMove = (e) => {
-    setState({ event: e })
-  }
-
+  const { e, x, y, movementX, movementY, speed } = useMouse()
   return (
-    <div
-      role="presentation"
-      className="t-fullpage"
-      onMouseMove={handleOnMouseMove}
-    >
-      <Cursor event={state.event} />
+    <>
+      <Cursor event={e} />
       <div className="t-page-background t-page-background--1"></div>
       <div className="t-page-background t-page-background--2 bg-clip"></div>
       <div className="container">
         <div className="row">
           <div className="col">
             <h2>Masking Test</h2>
-            <h1 className="effect">Page not found</h1>
+            <p>X: {x}</p>
+            <p>Y: {y}</p>
+            <p>movementX: {movementX}</p>
+            <p>movementY: {movementY}</p>
+            <p>speed: {speed}</p>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

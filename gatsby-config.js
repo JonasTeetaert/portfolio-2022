@@ -4,10 +4,11 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'Portfolio 2022',
-    description: 'My portfolio 2022 made with Gatsby and Contentful',
-    // image: '',
-    // siteUrl: ''
+    title: 'Jonas Teetaert - Creative Frontend Developer | Portfolio',
+    description:
+      'Jonas Teetaert is a Brussels based Frontend Developer passionated about how web animations can enhance a better user experience. He makes websites and web applications from scratch using technologies as Craft CMS and React, fully customised to the customer’s needs.',
+    image: '/static/icons/favicon/mstile-150x150.png',
+    siteUrl: 'https://www.jonasteetaert.be/',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

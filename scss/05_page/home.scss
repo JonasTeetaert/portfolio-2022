@@ -4,12 +4,14 @@
   font-family: $font-family-durer;
   text-align: end;
   padding: 0;
-
   a {
+    transition: transform 250ms ease;
+
     &:hover,
     &:active,
     &:focus {
       text-decoration: none;
+      transform: scale(1.1);
     }
   }
 

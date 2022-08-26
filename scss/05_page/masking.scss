@@ -16,10 +16,11 @@
   .cursor {
     display: block;
     position: fixed;
-    top: -5px;
-    left: -5px;
+    top: -7.5px;
+    left: -7.5px;
     mix-blend-mode: difference;
     pointer-events: none;
+    z-index: 1;
     > div {
       border-radius: 100%;
       width: 15px;
@@ -33,12 +34,14 @@
     clip-path: url(#clip-circle);
   }
   
+  #clip-cirlce ellipse,
   #clip-circle path,
   #clip-circle circle {
     transform-origin: center;
     pointer-events: none;
   }
   
+  #clip-circle ellipse,
   #clip-circle circle {
     //  pulse 1s infinite alternate cubic-bezier(0.785, 0.135, 0.15, 0.86);
     transform-origin: center;

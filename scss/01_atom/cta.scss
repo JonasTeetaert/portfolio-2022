@@ -8,13 +8,9 @@
 	border-bottom-left-radius: 50% 50%;
 	border-bottom-right-radius: 50% 50%;
 
-
-	&:hover {
-		text-decoration: none;
-		background-color: $skin !important;
-	}
-
+	&:hover,
 	&.active {
+		text-decoration: none;
 		background-color: $body-color;
 		color: #000;
 	}

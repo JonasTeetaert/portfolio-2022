@@ -10,6 +10,8 @@ const Seo = ({ description = '', lang = 'en', meta = [], title, image }) => {
           siteMetadata {
             title
             description
+            image
+            siteUrl
           }
         }
       }
@@ -18,7 +20,7 @@ const Seo = ({ description = '', lang = 'en', meta = [], title, image }) => {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
-
+  const faviconPath = '/icons/favicon'
   return (
     <Helmet
       htmlAttributes={{
@@ -52,24 +54,44 @@ const Seo = ({ description = '', lang = 'en', meta = [], title, image }) => {
           property: `og:image`,
           content: image,
         },
-        {
-          name: `twitter:card`,
-          content: `summary_large_image`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.social?.twitter || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
+        // {
+        //   name: `twitter:card`,
+        //   content: `summary_large_image`,
+        // },
+        // {
+        //   name: `twitter:creator`,
+        //   content: site.siteMetadata?.social?.twitter || ``,
+        // },
+        // {
+        //   name: `twitter:title`,
+        //   content: title,
+        // },
+        // {
+        //   name: `twitter:description`,
+        //   content: metaDescription,
+        // },
       ].concat(meta)}
-    />
+      link={[]}
+    >
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href={`${faviconPath}/apple-touch-icon.png`}
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href={`${faviconPath}/favicon-32x32.png`}
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href={`${faviconPath}/favicon-16x16.png`}
+      />
+      <link rel="manifest" href={`${faviconPath}/site.webmanifest`} />
+    </Helmet>
   )
 }
 

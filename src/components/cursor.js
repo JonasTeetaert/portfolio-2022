@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 
 const Cursor = ({ event }) => {
   const [state, setState] = useState({
-    x: 0,
-    y: 0,
+    x: null,
+    y: null,
     scaleSVG: 0,
     opacity: 0,
     scaleCursor: 0,
@@ -16,13 +16,15 @@ const Cursor = ({ event }) => {
         event.target.localName === 'a' ||
         event.target.localName === 'button'
       ) {
+        // on hover
         setState({
           x: event.clientX,
           y: event.clientY,
-          scaleSVG: 4,
-          scaleCursor: 3,
+          scaleSVG: 45,
+          scaleCursor: 5,
         })
       } else {
+        // rest state
         setState({
           x: event.clientX,
           y: event.clientY,
@@ -54,7 +56,7 @@ const Cursor = ({ event }) => {
             <circle
               cx="0"
               cy="0"
-              r="100"
+              r="40"
               style={{
                 transform: `scale(${state.scaleSVG})`,
               }}
