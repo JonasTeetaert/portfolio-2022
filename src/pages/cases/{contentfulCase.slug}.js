@@ -17,7 +17,7 @@ const Case = ({ data }) => {
   })
 
   return (
-    <Layout>
+    <Layout classes="t-page--case">
       <div className="t-page__cta">
         <a
           className="a-cta"
@@ -55,7 +55,7 @@ const Case = ({ data }) => {
           <div className="h1 t-page__title">{next.title}</div>
         </div>
       ) : (
-        <div>Test</div>
+        <></>
       )}
     </Layout>
   )

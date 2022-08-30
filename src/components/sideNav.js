@@ -16,13 +16,15 @@ const SideNav = ({ data }) => {
       </div>
       <ul className="m-side-nav__social">
         <li>
-          <a
-            href={data.contentfulProfile.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram
-          </a>
+          {data.contentfulProfile.instagram && (
+            <a
+              href={data.contentfulProfile.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
+          )}
         </li>
         <li>
           <a

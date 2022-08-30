@@ -19,7 +19,7 @@ const blendModes = [
   'saturation',
 ]
 
-const Layout = ({ nav, fullpage, children }) => {
+const Layout = ({ classes, nav, fullpage, children }) => {
   const [mouse, setMouse] = useState({
     e: null,
     x: null,
@@ -78,7 +78,11 @@ const Layout = ({ nav, fullpage, children }) => {
           mixBlendMode: funMode ? blendModes[counter] : 'hard-light',
         }}
       ></div>
-      <main className={fullpage ? 't-fullpage' : 't-page'}>
+      <main
+        className={`${fullpage ? 't-fullpage' : 't-page'} ${
+          classes ? classes : ''
+        }`}
+      >
         <div className="container">
           <div className="row">
             {nav ? (
