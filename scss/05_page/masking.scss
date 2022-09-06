@@ -45,6 +45,7 @@
   #clip-circle circle {
     //  pulse 1s infinite alternate cubic-bezier(0.785, 0.135, 0.15, 0.86);
     transform-origin: center;
-    transition: all 500ms ease;
+    // transform: scale(0);
+    // transition: transform 500ms ease;
   }
 }

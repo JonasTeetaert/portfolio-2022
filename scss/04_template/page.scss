@@ -81,6 +81,9 @@
    &:active {
     text-decoration: none;
     transform: scale(1.2);
+    path {
+      fill: #000;
+    }
    }
 
    @include media-breakpoint-up(md) {
@@ -92,6 +95,7 @@
   fill: #fff;
   margin-left: calc($spacer/2);
 } 
+
 .t-page__pagination {
   margin-top: $spacer;
 }

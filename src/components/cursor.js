@@ -1,4 +1,23 @@
 import React, { useState, useEffect } from 'react'
+import anime from 'animejs'
+
+function animateButton(el, scale, duration, easing) {
+  anime.remove(el)
+  anime({
+    targets: el,
+    scale: scale,
+    duration: duration,
+    easing: easing,
+  })
+}
+
+function enterButton(el) {
+  animateButton(el, 35, 500, 'easeInOutCubic')
+}
+
+function leaveButton(el) {
+  animateButton(el, 1.0, 400, 'easeInOutCubic')
+}
 
 const Cursor = ({ event }) => {
   const [state, setState] = useState({
@@ -8,6 +27,28 @@ const Cursor = ({ event }) => {
     opacity: 0,
     scaleCursor: 0,
   })
+
+  // componentDidMount
+  useEffect(() => {
+    const aTags = document.querySelectorAll('a')
+    aTags.forEach((tag) => {
+      tag.addEventListener(
+        'mouseenter',
+        () => {
+          enterButton('#clip-circle circle')
+        },
+        false
+      )
+
+      tag.addEventListener(
+        'mouseleave',
+        () => {
+          leaveButton('#clip-circle circle')
+        },
+        false
+      )
+    })
+  }, [])
 
   // componentDidUpdate
   useEffect(() => {
@@ -20,7 +61,7 @@ const Cursor = ({ event }) => {
         setState({
           x: event.clientX,
           y: event.clientY,
-          scaleSVG: 45,
+          scaleSVG: 1,
           scaleCursor: 5,
         })
       } else {
@@ -57,9 +98,9 @@ const Cursor = ({ event }) => {
               cx="0"
               cy="0"
               r="40"
-              style={{
-                transform: `scale(${state.scaleSVG})`,
-              }}
+              // style={{
+              //   transform: `scale(${state.scaleSVG})`,
+              // }}
             />
           </clipPath>
         </defs>

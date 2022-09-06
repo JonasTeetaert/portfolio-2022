@@ -3,7 +3,7 @@ import { debounce } from 'lodash'
 import { throttle } from 'lodash'
 
 // Trottle function for performance
-const DURATION = 25
+const DURATION = 15
 const throttled = (function () {
   let timeout = undefined
   return function throttle(callback) {
