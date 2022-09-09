@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
-import { throttlify } from '../functions'
+import { useMouse } from '../functions'
 
 import '../../scss/main.scss'
 import Seo from './seo'
 import Navigation from './navigation'
 import Footer from './footer'
 import Cursor from './cursor'
+import { set } from 'lodash'
 
 const blendModes = [
   'color',
@@ -19,17 +20,12 @@ const blendModes = [
   'saturation',
 ]
 
+const SPEED = 1
+
 const Layout = ({ classes, nav, fullpage, children }) => {
-  const [mouse, setMouse] = useState({
-    e: null,
-    x: null,
-    y: null,
-    // movementX: null,
-    // movementY: null,
-    // speed: null,
-  })
-  const [funMode, setFunMode] = useState(false)
   const [counter, setCounter] = useState(0)
+  const [backgroundPos, setBackgroundPos] = useState(0)
+  const { e, movement } = useMouse()
 
   // Mobile check
   const isDesktop = useMediaQuery({
@@ -37,45 +33,34 @@ const Layout = ({ classes, nav, fullpage, children }) => {
   })
 
   useEffect(() => {
-    // trotthlify will execute the mouse event less for performance
-    const handle = throttlify((e) => {
-      if (isDesktop) {
-        setMouse({
-          e: e,
-          x: e.clientX,
-          y: e.clientY,
-          // movementX: Math.abs(e.movementY),
-          // movementY: Math.abs(e.movementY),
-          // speed: speed,
-        })
-        if (funMode) {
-          if (counter >= blendModes.length - 1) {
-            setCounter(0)
-          } else {
-            setCounter(counter + 1)
-          }
-        }
-      }
-    })
-    document.addEventListener('mousemove', handle)
-    return () => document.removeEventListener('mousemove', handle)
-  }, [isDesktop, counter, funMode])
+    if (isDesktop) {
+      // background movement effect
+      setBackgroundPos((b) => b + movement)
+    }
+  }, [isDesktop, movement])
 
-  // Toggle fun mode
-  const toggleFunMode = () => {
-    setFunMode((bool) => !bool)
+  function increaseCounter() {
+    setCounter((c) => c + 1)
   }
+
+  // reset counter and update state
+  useEffect(() => {
+    if (counter >= blendModes.length - 1) {
+      setCounter(0)
+    }
+  }, [counter])
 
   return (
     <>
       <Seo />
-      <Navigation funModeHandler={toggleFunMode} isFunMode={funMode} />
-      <Cursor event={mouse.e} />
+      <Navigation />
+      <Cursor event={e} increaseCounter={increaseCounter} />
       <div className="t-page-background  t-page-background--1"></div>
       <div
         className="t-page-background t-page-background--2 bg-clip"
         style={{
-          mixBlendMode: funMode ? blendModes[counter] : 'hard-light',
+          mixBlendMode: blendModes[counter],
+          backgroundPosition: `${backgroundPos * SPEED}px`,
         }}
       ></div>
       <main

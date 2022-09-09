@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 
-const Navigation = ({ funModeHandler, isFunMode }) => {
+const Navigation = () => {
   return (
     <nav className="m-nav">
       <div className="container">
@@ -14,14 +14,14 @@ const Navigation = ({ funModeHandler, isFunMode }) => {
               {/* <li>
               <Link to="/blog/">Blog</Link>
             </li> */}
-              <li>
+              {/* <li>
                 <button
                   className={`a-cta ${isFunMode ? 'active' : ''}`}
                   onClick={funModeHandler}
                 >
                   Fun Mode
                 </button>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
