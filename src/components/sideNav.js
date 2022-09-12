@@ -15,7 +15,7 @@ const SideNav = ({ data }) => {
         </ul>
       </div>
       <ul className="m-side-nav__social">
-        <li>
+        {/* <li>
           {data.contentfulProfile.instagram && (
             <a
               href={data.contentfulProfile.instagram}
@@ -25,7 +25,7 @@ const SideNav = ({ data }) => {
               Instagram
             </a>
           )}
-        </li>
+        </li> */}
         <li>
           <a
             href={data.contentfulProfile.linkedin}
