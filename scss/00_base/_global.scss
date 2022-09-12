@@ -19,6 +19,9 @@ body {
   overflow-y: auto;
   background: rgb(72, 148, 167);
   background: linear-gradient(122deg, rgba(72, 148, 167, 1) 0%, rgba(236, 200, 157, 1) 100%);
+  @include media-breakpoint-up(md) {
+    font-size: 1.5rem;
+  }
 }
 
 a {

@@ -4,6 +4,17 @@ import Layout from '../../components/layout'
 import ContentfulRichText from '../../components/richt-text'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
+const blendModes = [
+  'color',
+  'hard-light',
+  'multiply',
+  'darken',
+  'hue',
+  'luminosity',
+  'overlay',
+  'saturation',
+]
+
 const Case = ({ data }) => {
   const node = data.contentfulCase
   const hero = getImage(node.heroImage)
@@ -16,8 +27,11 @@ const Case = ({ data }) => {
     }
   })
 
+  const blendMode = blendModes[Math.floor(Math.random() * blendModes.length)]
+  console.log(blendMode)
+
   return (
-    <Layout classes="t-page--case">
+    <Layout classes="t-page--case" blendMode={blendMode}>
       <div className="t-page__cta">
         <a
           className="a-cta"

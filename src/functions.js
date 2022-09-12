@@ -32,9 +32,11 @@ export function useMouse() {
 
   useEffect(() => {
     document.addEventListener('mousemove', throttledEventHandler)
+    // document.addEventListener('scroll', throttledEventHandler)
     // document.addEventListener('mousemove', debouncedEventHandler)
     return () => {
       document.removeEventListener('mousemove', throttledEventHandler)
+      // document.removeEventListener('scroll', throttledEventHandler)
       // document.removeEventListener('mousemove', debouncedEventHandler)
       throttledEventHandler.cancel()
       // debouncedEventHandler.cancel()

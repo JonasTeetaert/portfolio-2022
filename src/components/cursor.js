@@ -12,14 +12,14 @@ function animateButton(el, scale, duration, easing) {
 }
 
 function enterButton(el) {
-  animateButton(el, 35, 500, 'easeInOutCubic')
+  animateButton(el, 45, 500, 'easeInOutCubic')
 }
 
 function leaveButton(el) {
-  animateButton(el, 1.0, 400, 'easeInOutCubic')
+  animateButton(el, 1, 400, 'easeInOutCubic')
 }
 
-const Cursor = ({ event, increaseCounter }) => {
+const Cursor = ({ event }) => {
   const [state, setState] = useState({
     x: null,
     y: null,
@@ -36,7 +36,6 @@ const Cursor = ({ event, increaseCounter }) => {
         'mouseenter',
         () => {
           enterButton('#clip-circle circle')
-          increaseCounter()
         },
         false
       )
@@ -62,7 +61,6 @@ const Cursor = ({ event, increaseCounter }) => {
         setState({
           x: event.clientX,
           y: event.clientY,
-          scaleSVG: 1,
           scaleCursor: 5,
         })
       } else {
@@ -70,7 +68,6 @@ const Cursor = ({ event, increaseCounter }) => {
         setState({
           x: event.clientX,
           y: event.clientY,
-          scaleSVG: 1,
           scaleCursor: 1,
         })
       }
@@ -95,7 +92,7 @@ const Cursor = ({ event, increaseCounter }) => {
               transform: `translate(${state.x}px,${state.y}px)`,
             }}
           >
-            <circle cx="0" cy="0" r="40" />
+            <circle cx="0" cy="0" r="50" />
           </clipPath>
         </defs>
       </svg>

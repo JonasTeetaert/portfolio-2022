@@ -7,23 +7,10 @@ import Seo from './seo'
 import Navigation from './navigation'
 import Footer from './footer'
 import Cursor from './cursor'
-import { set } from 'lodash'
 
-const blendModes = [
-  'color',
-  'hard-light',
-  'multiply',
-  'darken',
-  'hue',
-  'luminosity',
-  'overlay',
-  'saturation',
-]
+const SPEED = 0.5
 
-const SPEED = 1
-
-const Layout = ({ classes, nav, fullpage, children }) => {
-  const [counter, setCounter] = useState(0)
+const Layout = ({ classes, nav, fullpage, children, blendMode }) => {
   const [backgroundPos, setBackgroundPos] = useState(0)
   const { e, movement } = useMouse()
 
@@ -39,27 +26,16 @@ const Layout = ({ classes, nav, fullpage, children }) => {
     }
   }, [isDesktop, movement])
 
-  function increaseCounter() {
-    setCounter((c) => c + 1)
-  }
-
-  // reset counter and update state
-  useEffect(() => {
-    if (counter >= blendModes.length - 1) {
-      setCounter(0)
-    }
-  }, [counter])
-
   return (
     <>
       <Seo />
       <Navigation />
-      <Cursor event={e} increaseCounter={increaseCounter} />
+      <Cursor event={e} />
       <div className="t-page-background  t-page-background--1"></div>
       <div
         className="t-page-background t-page-background--2 bg-clip"
         style={{
-          mixBlendMode: blendModes[counter],
+          mixBlendMode: blendMode ? blendMode : 'hard-light',
           backgroundPosition: `${backgroundPos * SPEED}px`,
         }}
       ></div>
