@@ -24,8 +24,10 @@
 
 .t-section {
   padding: $spacer 0;
-  &:nth-child(even) {
-    text-align: right;
+  @include media-breakpoint-up(md) {
+    &:nth-child(even) {
+      text-align: right;
+    }
   }
 }
 
