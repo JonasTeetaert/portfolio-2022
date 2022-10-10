@@ -24,6 +24,10 @@
   }
 }
 
+.t-page__hero-image {
+  pointer-events: none;
+}
+
 .t-page__list {
   font-size: 1.2rem;
   @include media-breakpoint-up(md) {

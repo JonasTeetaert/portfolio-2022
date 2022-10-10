@@ -49,7 +49,13 @@ const Case = ({ data }) => {
           <li key={n}>{i}</li>
         ))}
       </ul>
-      <GatsbyImage image={hero} alt={node.heroImage.description} />
+      <a href={node.url} target="_blank" rel="noopener noreferrer">
+        <GatsbyImage
+          image={hero}
+          alt={node.heroImage.description}
+          className="t-page__hero-image"
+        />
+      </a>
       <ContentfulRichText richText={node.content} />
       {next != null ? (
         <div className="t-page__pagination">
